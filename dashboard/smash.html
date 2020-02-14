@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<label>Player 1:</label>
+	<input id="player1Name" type="text"></input>
+	<label>Player 2:</label>
+	<input id="player2Name" type="text"></input>
+	<button id="submitButton">Submit</button>
+	<br>
+	<button id="openButton">Open Wings</button>
+	<button id="closeButton">Close Wings</button>
+</body>
+
+<script>
+	const player1Name = document.querySelector('#player1Name');
+	const player2Name = document.querySelector('#player2Name');
+	const submitButton = document.querySelector('#submitButton');
+	const openButton = document.querySelector('#openButton');
+	const closeButton = document.querySelector('#closeButton');
+
+	const playerNamesReplicant = nodecg.Replicant('playerNames');
+
+	submitButton.onclick = () => {
+		// A Replicant can be modified by modifying its `value`.
+		playerNamesReplicant.value = [player1Name.value, player2Name.value];
+	};
+
+	openButton.onclick = () => {
+		nodecg.sendMessage("openWings");
+	};
+	closeButton.onclick = () => {
+		nodecg.sendMessage("closeWings");
+	};
+</script>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "smash-overlay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+
+  "nodecg": {
+    "compatibleRange": ">=0.9",
+    "dashboardPanels": [
+      {
+        "name": "smash",
+        "title": "Smash Overlay",
+        "width": 3,
+        "file": "smash.html",
+        "headerColor": "#9f9bbd"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "smash.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+body {
+	margin: 0;
+}
+.canvas {
+	width: 1920px;
+	height: 1080px;
+	/*border: 5px solid red;*/
+	outline: solid red;
+}
+.nameOverlay {
+	position: absolute;
+	top: 10px;
+}
+.nameOverlayBackground {
+	position: absolute;
+	left: 391px;
+	top: 52px;
+	width: 1138px;
+	height: 165px;
+	display: flex;
+}
+
+#emblem {
+	position: absolute;
+	left: 754.5px;
+	z-index: 2;
+}
+
+.wingContainer {
+	overflow: hidden;
+}
+.wing {
+	position: relative;
+}
+.wingImage {
+	position: relative;
+}
+#rightWing .wingImage {
+	/* Fixes difference in image height*/
+	height: 163px;
+}
+
+#leftTextBox {
+	left: 183px;
+}
+span {
+	color: white;
+	z-index: 1;
+	font-size: 50pt;
+	position: relative;
+
+	/*position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);*/
+
+	/*width: 239px;*/
+}
+.textBox {
+	position: relative;
+	bottom: 165px;
+	width: 239px;
+	height: 103px;
+	margin: 0;
+
+	text-align: center;
+    /*box-sizing: border-box;
+    border: 5px solid red;*/
+}
+.verticalCenter {
+	position: relative;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+#rightTextBox {
+	left: 141px;
+}
+#rightWing {
+	right: 268px;
+}
+#leftWing {
+	left: 268px;
+}
