@@ -1,5 +1,5 @@
 # LSUVGS-Smash-Overlay
-NodeCG module for an interactive overlay for LSUVGS Smash Bros streams
+NodeCG bundle for an interactive overlay for LSUVGS Smash Bros streams
 
 # Goals
 - Changing of player names (easy, seemless)
