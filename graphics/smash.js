@@ -59,16 +59,21 @@ function closeWings(onLeftFinishAction = function() {}, onRightFinishAction = fu
 	open = false;
 }
 
-const nameReplicant = nodecg.Replicant('playerNames', '0_dashboards');
+const nameReplicant = nodecg.Replicant('playerNames', 'smash-overlay');
+const scoreReplicant = nodecg.Replicant('playerScores', 'smash-overlay');
 
 nameReplicant.on('change', (newValue, oldValue) => {
 	update(newValue[0], newValue[1]);
 });
+scoreReplicant.on('change', (newValue, oldValue) => {
+	$('#leftScore').html(newValue[0]);
+	$('#rightScore').html(newValue[1]);
+});
 
-nodecg.listenFor("openWings", message => {
+nodecg.listenFor('openWings', message => {
 	openWings();
 });
 
-nodecg.listenFor("closeWings", message => {
+nodecg.listenFor('closeWings', message => {
 	closeWings();
 });

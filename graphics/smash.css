@@ -82,3 +82,12 @@ span {
 #leftWing {
 	left: 268px;
 }
+
+#leftScore {
+	top: -253px;
+	left: 101px;
+}
+#rightScore {
+	top: -253px;
+	left: 430px;
+}

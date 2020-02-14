@@ -9,6 +9,12 @@
 	<br>
 	<button id="openButton">Open Wings</button>
 	<button id="closeButton">Close Wings</button>
+	<br>
+	<button id="p1Inc">P1+</button>
+	<button id="p1Dec">P1-</button>
+	<button id="p2Inc">P2+</button>
+	<button id="p2Dec">P2-</button>
+	<button id="reset">Reset</button>
 </body>
 
 <script>
@@ -17,8 +23,14 @@
 	const submitButton = document.querySelector('#submitButton');
 	const openButton = document.querySelector('#openButton');
 	const closeButton = document.querySelector('#closeButton');
+	const p1Inc = document.querySelector('#p1Inc');
+	const p1Dec = document.querySelector('#p1Dec');
+	const p2Inc = document.querySelector('#p2Inc');
+	const p2Dec = document.querySelector('#p2Dec');
+	const reset = document.querySelector('#reset');
 
 	const playerNamesReplicant = nodecg.Replicant('playerNames');
+	const playerScoreReplicant = nodecg.Replicant('playerScores', { defaultValue: [0, 0] });
 
 	submitButton.onclick = () => {
 		// A Replicant can be modified by modifying its `value`.
@@ -30,6 +42,34 @@
 	};
 	closeButton.onclick = () => {
 		nodecg.sendMessage("closeWings");
+	};
+
+	p1Inc.onclick = () => {
+		if(playerScoreReplicant.value[0] >= 3)
+			return;
+
+		playerScoreReplicant.value[0]++;
+	};
+	p1Dec.onclick = () => {
+		if(playerScoreReplicant.value[0] <= 0)
+			return;
+
+			playerScoreReplicant.value[0]--;
+		}
+	p2Inc.onclick = () => {
+		if(playerScoreReplicant.value[1] >= 3)
+			return;
+
+			playerScoreReplicant.value[1]++;
+	};
+	p2Dec.onclick = () => {
+		if(playerScoreReplicant.value[1] <= 0)
+			return;
+		
+			playerScoreReplicant.value[1]--;
+	};
+	reset.onclick = () => {
+		playerScoreReplicant.value = [0, 0];
 	};
 </script>
 </html>
