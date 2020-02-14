@@ -71,5 +71,11 @@
 	reset.onclick = () => {
 		playerScoreReplicant.value = [0, 0];
 	};
+
+	NodeCG.waitForReplicants(playerNamesReplicant).then(() => {
+		player1Name.value = playerNamesReplicant.value[0];
+		player2Name.value = playerNamesReplicant.value[1];
+	    console.log('rep1 and rep2 are fully declared and ready to use!');
+	});
 </script>
 </html>
