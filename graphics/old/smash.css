@@ -9,44 +9,21 @@ body {
 }
 .nameOverlay {
 	position: absolute;
+	top: 10px;
 }
 .nameOverlayBackground {
 	position: absolute;
-	left: 275px;
-	width: 1370px;
+	left: 391px;
+	top: 52px;
+	width: 1138px;
 	height: 165px;
 	display: flex;
 }
 
 #emblem {
-}
-.center {
-	left: 731px;
-    width: 458px;
-    position: absolute;
-    align-items: center;
-}
-.title {
-	font-size: 22pt;
-    position: absolute;
-    width: 400px;
-    left: 23px;
-    text-align: center;
-}
-#title {
-	width: 374px;
-	left: 42px;
-}
-#subtitle {
-	top: 33px;
-	width: 341px;
-    left: 60px;
-    font-size: 21pt;
-}
-#round {
-	top: 66px;
-	width: 341px;
-    left: 60px;
+	position: absolute;
+	left: 754.5px;
+	z-index: 2;
 }
 
 .wingContainer {
@@ -58,17 +35,19 @@ body {
 .wingImage {
 	position: relative;
 }
+#rightWing .wingImage {
+	/* Fixes difference in image height*/
+	height: 163px;
+}
 
-@font-face {
-   font-family: Reznor; 
-   src: url('fonts/REZB____.TTF');
+#leftTextBox {
+	left: 183px;
 }
 span {
 	color: white;
 	z-index: 1;
 	font-size: 50pt;
 	position: relative;
-	font-family: Impact;
 
 	/*position: absolute;
 	top: 50%;
@@ -81,9 +60,8 @@ span {
 	position: relative;
 	bottom: 165px;
 	width: 239px;
-	height:70px;
+	height: 103px;
 	margin: 0;
-	top: -113px;
 
 	text-align: center;
     /*box-sizing: border-box;
@@ -95,11 +73,8 @@ span {
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-#leftTextBox {
-	left: 200px;
-}
 #rightTextBox {
-	left: 240px;
+	left: 141px;
 }
 #rightWing {
 	right: 268px;
@@ -109,21 +84,10 @@ span {
 }
 
 #leftScore {
-	top: -187px;
-	left: 84px;
+	top: -253px;
+	left: 101px;
 }
 #rightScore {
-	top: -187px;
-	left: 565px;
-}
-
-.webcamFrame {
-	top: 855px;
-	position: absolute;
-}
-#leftWebcamFrame {
-
-}
-#rightWebcamFrame {
-	left: 1545px;
+	top: -253px;
+	left: 430px;
 }
