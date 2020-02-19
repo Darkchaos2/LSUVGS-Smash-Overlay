@@ -60,14 +60,49 @@ function closeWings(onLeftFinishAction = function() {}, onRightFinishAction = fu
 }
 
 const nameReplicant = nodecg.Replicant('playerNames', 'smash-overlay');
-const scoreReplicant = nodecg.Replicant('playerScores', 'smash-overlay');
+const score1Replicant = nodecg.Replicant('playerScore1', 'smash-overlay');
+const score2Replicant = nodecg.Replicant('playerScore2', 'smash-overlay');
 
 nameReplicant.on('change', (newValue, oldValue) => {
 	update(newValue[0], newValue[1]);
 });
-scoreReplicant.on('change', (newValue, oldValue) => {
-	$('#leftScore').html(newValue[0]);
-	$('#rightScore').html(newValue[1]);
+score1Replicant.on('change', (newValue, oldValue) => {
+	$("#leftScore").animate(
+		{
+			top: '-75px'
+		},
+		750,
+		() => {
+			$('#leftScore').html(newValue);
+
+			$("#leftScore").animate(
+				{
+					top: '0px'
+				},
+				750
+			);
+		}
+	);
+
+});
+score2Replicant.on('change', (newValue, oldValue) => {
+	$("#rightScore").animate(
+		{
+			top: '-75px'
+		},
+		750,
+		() => {
+			$('#rightScore').html(newValue);
+
+			$("#rightScore").animate(
+				{
+					top: '0px'
+				},
+				750
+			);
+		}
+	);
+
 });
 
 nodecg.listenFor('openWings', message => {
